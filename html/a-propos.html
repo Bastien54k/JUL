@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>À propos du site - Jul</title>
+   <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+   <header class="entete">
+      <a class="logo" href="../index.html">JUL</a>
+      <nav class="menu">
+         <a href="../index.html">Accueil</a>
+         <a href="parcours.html">Parcours</a>
+         <a href="discographie.html">Discographie</a>
+         <a href="phenomene.html">Phénomène</a>
+         <a class="actif" href="a-propos.html">À propos</a>
+      </nav>
+   </header>
+   <main>
+      <nav class="fil-ariane">
+         <a href="../index.html">Accueil</a>
+         <span>À propos</span>
+      </nav>
+      <section class="bandeau">
+         <h1>À propos de ce site</h1>
+         <p>Cette page sert de rapport au projet du module R1-02 : Développement d'interfaces Web.</p>
+      </section>
+      <section>
+         <h2>Le thème retenu</h2>
+         <p>Le thème est <strong>Jul</strong>, rappeur marseillais. Il convient facilement à la structure demandée, car son histoire se découpe en plusieurs rubriques : son parcours, sa discographie, le phénomène qui l'entoure...</p>
+      </section>
+      <section>
+         <h2>Le site en ligne</h2>
+         <p>Le site est accessible sur le serveur de l'IUT : <a href="https://webetu.iutnc.univ-lorraine.fr/~e45345u/">Ici !</a>
+         </p>
+      </section>
+      <section>
+         <h2>Les maquettes</h2>
+         <div class="deux-colonnes">
+            <img src="../images/maquette/maquette-accueil-ordinateur.svg" alt="Maquette accueil ordinateur">
+            <div>
+               <h3>Accueil sur ordinateur</h3>
+               <p>Le bandeau présente le sujet à côté d'une image. Les trois rubriques viennent ensuite sur une ligne. L'article à la une occupe deux colonnes et deux lignes pour attirer l'oeil en premier.</p>
+            </div>
+         </div>
+         <div class="deux-colonnes">
+            <img src="../images/maquette/maquette-accueil-tablette.svg" alt="Maquette accueil tablette">
+            <div>
+               <h3>Accueil sur tablette</h3>
+               <p>Le bandeau et les rubriques gardent leur disposition. Les articles passent sur deux colonnes. L'article à la une et le dernier article prennent toute la largeur, ce qui évite une case vide.</p>
+            </div>
+         </div>
+         <div class="deux-colonnes">
+            <img src="../images/maquette/maquette-accueil-telephone.svg" alt="Maquette accueil téléphone">
+            <div>
+               <h3>Accueil sur téléphone</h3>
+               <p>Tout passe sur une seule colonne. </p>
+            </div>
+         </div>
+         <div class="deux-colonnes">
+            <img src="../images/maquette/maquette-rubrique.svg" alt="Maquette page ordinateur">
+            <div>
+               <h3>Page de rubrique</h3>
+               <p>Le chemin d'accès (fil d'Ariane) indique où l'on se trouve. Le bandeau introduit la rubrique, puis ses articles sont présentés. L'encart donne accès aux autres rubriques. Sur tablette et téléphone, il passe sous le contenu.</p>
+            </div>
+         </div>
+         <div class="deux-colonnes">
+            <img src="../images/maquette/maquette-article.svg" alt="Maquette article ordinateur">
+            <div>
+               <h3>Page d'article</h3>
+               <p>Le texte occupe la plus grande colonne pour rester lisible. Les encarts résument l'essentiel et proposent la suite. Sur tablette et téléphone, ils passent sous l'article.</p>
+            </div>
+         </div>
+      </section>
+      <section>
+         <h2>Les arbres HTML</h2>
+         <p>Ces arbres montrent l'imbrication des principaux éléments de chaque type de page.</p>
+         <h3>Page d'accueil</h3>
+         <img class="illustration" src="../images/arbre/arbre-accueil.svg" alt="Arbre accueil">
+         <h3>Page de rubrique</h3>
+         <img class="illustration" src="../images/arbre/arbre-rubrique.svg" alt="Arbre rubrique">
+         <h3>Page d'article</h3>
+         <img class="illustration" src="../images/arbre/arbre-article.svg" alt="Arbre article">
+      </section>
+      <section>
+         <h2>Justification des conteneurs flex et grid</h2>
+         <p>La règle suivie est simple : flex quand les éléments s'alignent sur un seul axe, grid quand la disposition se pense en lignes et en colonnes.</p>
+         <h3>body (flex)</h3>
+         <ul>
+            <li><strong>Pourquoi :</strong> une colonne flexible permet à <i>main</i> de prendre l'espace restant avec <i>flex-grow</i>. Le pied de page reste ainsi en bas, même sur une page courte.</li>
+            <li><strong>Enfants directs :</strong> <i>header</i>, <i>main</i> et <i>footer</i>.</li>
+            <li><strong>Responsive :</strong> aucun changement, la colonne convient à tous les écrans.</li>
+         </ul>
+         <h3>.entete et .pied (flex)</h3>
+         <ul>
+            <li><strong>Pourquoi :</strong> ces barres alignent deux blocs sur une ligne, repoussés aux extrémités avec <i>justify-content: space-between</i>.</li>
+            <li><strong>Enfants directs :</strong> le logo et le menu pour l'entête, le texte et le menu pour le pied.
+            </li>
+            <li><strong>Responsive :</strong> sur téléphone, <i>flex-direction: column</i> les empile et centre le contenu.</li>
+         </ul>
+         <h3>.menu (flex)</h3>
+         <ul>
+            <li><strong>Pourquoi :</strong> les liens forment une seule rangée, et <i>flex-wrap</i> gère le manque de place sans media query.</li>
+            <li><strong>Enfants directs :</strong> les liens <i>a</i>.</li>
+            <li><strong>Responsive :</strong> les liens passent à la ligne d'eux-mêmes et sont centrés sur téléphone.
+            </li>
+         </ul>
+         <h3>.carte (flex)</h3>
+         <ul>
+            <li><strong>Pourquoi :</strong> une colonne permet de pousser le bouton en bas avec <i>margin-top: auto</i>. Les boutons restent alignés, quelle que soit la longueur du texte.</li>
+            <li><strong>Enfants directs :</strong> l'image, le titre, le résumé, la liste éventuelle et le bouton.</li>
+            <li><strong>Responsive :</strong> aucun changement, la carte s'adapte à la largeur de sa colonne.</li>
+         </ul>
+         <h3>.deux-colonnes (grid)</h3>
+         <ul>
+            <li><strong>Pourquoi :</strong> le bandeau d'accueil et les maquettes de cette page ont besoin de deux colonnes de largeurs proportionnelles (<i>3fr 2fr</i>). La même classe sert aux deux pour éviter la redondance.</li>
+            <li><strong>Enfants directs :</strong> un bloc de texte et une image.</li>
+            <li><strong>Responsive :</strong> sur téléphone, une seule colonne (<i>1fr</i>).</li>
+         </ul>
+         <h3>.grille-cartes (grid)</h3>
+         <ul>
+            <li><strong>Pourquoi :</strong> <i>repeat(auto-fit, minmax(200px, 1fr))</i> s'ajuste au nombre de cartes : trois rubriques sur l'accueil, deux articles dans une rubrique.</li>
+            <li><strong>Enfants directs :</strong> les <i>article.carte</i>.</li>
+            <li><strong>Responsive :</strong> le nombre de colonnes s'adapte seul à la largeur, sans media query.</li>
+         </ul>
+         <h3>.grille-articles (grid)</h3>
+         <ul>
+            <li><strong>Pourquoi :</strong> une grille à deux dimensions est nécessaire pour que l'article à la une (<i>#a-la-une</i>) occupe deux colonnes et deux lignes. Avec <i>order: -1</i>, il suffit de déplacer cet id pour changer d'article mis en valeur.</li>
+            <li><strong>Enfants directs :</strong> les six <i>article.carte</i>.</li>
+            <li><strong>Responsive :</strong> trois colonnes sur ordinateur, deux sur tablette, une sur téléphone.</li>
+         </ul>
+         <h3>.mise-en-page (grid)</h3>
+         <ul>
+            <li><strong>Pourquoi :</strong> les pages de rubrique et d'article juxtaposent un contenu principal et un encart, dans un rapport <i>3fr 1fr</i>.</li>
+            <li><strong>Enfants directs :</strong> le contenu principal et le <i>aside</i>.</li>
+            <li><strong>Responsive :</strong> à partir de la taille tablette, une seule colonne : l'encart passe sous le contenu.</li>
+         </ul>
+      </section>
+      <section>
+         <h2>Les images et l'utilisation d'outils d'IA</h2>
+         <p>Différentes photos de Jul, de ses concerts ou pour des illustrations ont été trouvées sur google.<br>
+            Elles ont été redimmensionné grace à l'outil d'IA Claude.</p>
+      </section>
+      <section>
+         <h2>Conclusion et difficultés rencontrées</h2>
+         <p>Le site respecte la structure demandée. Les pages utilisent une seule feuille de styles, ce qui permettra de changer facilement de modifier le visuel.</p>
+         <p>Plusieurs points ont demandé une attention particulière :</p>
+         <ul>
+            <li><strong>La grille des articles :</strong> un article sur deux colonnes laissait une case vide sur tablette. Le dernier article prend donc lui aussi toute la largeur à cette taille.</li>
+            <li><strong>La fiabilité des chiffres :</strong> les ventes et les affluences varient selon les sources. Les chiffres viennent de <a href="https://fr.wikipedia.org/wiki/Jul_(rappeur)">Wikipédia</a>, et les certifications officielles se vérifient auprès du <a href="https://snepmusique.com/">SNEP</a>.</li>
+         </ul>
+      </section>
+   </main>
+   <footer class="pied">
+      <p>Module R-1.02 : Développement des Interfaces Web - BECKER Bastien</p>
+      <nav class="menu">
+         <a href="../index.html">Accueil</a>
+         <a href="a-propos.html">À propos</a>
+         <a href="https://fr.wikipedia.org/wiki/Jul_(rappeur)">Source principale</a>
+      </nav>
+   </footer>
+</body>
+
+</html>
